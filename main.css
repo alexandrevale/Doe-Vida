@@ -1,0 +1,44 @@
+    html{
+	font-family: century gothic;
+	}
+
+	body{
+	font-size: 18px;    
+	background-color:#fff; 
+	}
+	
+	h1{
+	color:red;
+	}
+	
+	input{
+	margin:5px;	
+    }
+ 
+	.centro{
+	text-align:center;
+	margin-right: 20%;
+	margin-left: 20%;
+	margin-top: 5%;
+	}
+	
+	#btn{
+	color:#994029;
+	font-size:30px; 
+    background-color:#fff;
+    border-color:#FF6868;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    margin: 30px;
+    padding: 12px;
+    font-family: century gothic;
+	}
+	
+	#texto{
+	text-align: justify;
+	
+	}
+	
+	
+	
+	
