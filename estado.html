@@ -3,40 +3,35 @@
 <head>
 	<meta charset="utf-8">
 	<title> DOE SANGUE </title>
-    <link href="main.css" rel="stylesheet">
-    <script type="text/javascript" src="js/doevida.js"></script>
+    <link href="css/main.css" rel="stylesheet">
+	<script src="js/doevida.js"></script>
+	<script src="js/jquery-3.2.1.min.js"></script>
 </head>
-<body>
+<body onload="criar()">
 <div id="container">
     <header>   
         <h1 id="titulo">DOE SANGUE</h1>
         <p> Nesta etapa selecione o Estado em que você mora, para que possamos filtrar os melhores resultados</p>
     </header>
-        <h2>Instruções</h2>
+    <h2>Instruções</h2>
     <section class="instrucao">
-        
-            <ol>
-                <li>Selecione seu estado</li>
-                <li>Selecione sua cidade</li>
-                <li>Selecione um hemonucleo</li>
-            </ol>
+        <ol>
+            <li>Selecione seu estado</li>
+            <li>Selecione sua cidade</li>
+            <li>Selecione um hemonucleo</li>
+        </ol>
     </section>
     <section class="escolha">
-    <button onclick="criar()" id="b1"> Clicar</button>
-    
-    <form method="get" id="formulario">
-             
-	<br>
-	
-	<a href="home.html"><input type="button" id="btn" value="Anterior"></a>
-	<a href="cidade.html"><input type="button" id="btn" value="Próximo"></a>
-	
-	</form>
+        <form method="get" id="formulario">
+                 
+    	<br>
+    	
+    	<a href="home.html"><input type="button" id="btn" value="Anterior"></a>
+    	<a href="cidade.html"><input type="button" id="btn" value="Próximo"></a>
+    	
+    	</form>
     </section>
-    <footer>
-        <p>desenvolvido por:</p>
-    </footer>
-	</div>
+</div>
     </body>
 </html>    
     

@@ -1,15 +1,27 @@
 
-function criar() {
-    
-    var p = document.getElementById("formulario");
-    var select = document.createElement("select");
-    var conteudo = document.createElement("option")
-    var labSpan = document.createElement("label");
-    labSpan.innerHTML = "Estado";
-    conteudo.innerHTML = "Selecione"
-    
-    p.parentNode.insertBefore(select, formulario);
-    p.parentNode.insertBefore(labSpan,select);
-    select.appendChild(conteudo);
-    
-}  
+function criar(){
+    var objdb = [
+                {estado:"São Paulo"},
+                {estado:"Sergipe"}
+                ];     
+                
+    $(".escolha").ready(function(){
+        var p = document.getElementById("formulario");
+        var select = document.createElement("select");
+        var conteudo = document.createElement("option")
+        var labSpan = document.createElement("label");
+        labSpan.innerHTML = "Estado";
+        conteudo.innerHTML = "Selecione"
+        
+        p.parentNode.insertBefore(select, p);
+        p.parentNode.insertBefore(labSpan,select);
+        select.appendChild(conteudo);
+        
+        //Transformar em forEach
+        for (var i=0; i<objdb.length; i++) {
+            conteudo.setAttribute('value', objdb[i].value);
+            conteudo.appendChild(document.createTextNode(objdb[i].text));
+            select.appendChild(conteudo);
+        }
+    });    
+}
