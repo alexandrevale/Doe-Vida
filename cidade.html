@@ -8,21 +8,27 @@
 	<script src="js/doevida.js"></script>
 	<script src="js/jquery-3.2.1.min.js"></script>
 </head>
-<body>
-	<div class="centro">
-		<h1 id="titulo">DOE SANGUE</h1>
-	    <h2>2ª etapa - Selecione sua Cidade</h2>
-	    <p> Nesta etapa selecione a cidade em que você mora, assim mostraremos os hospitais mais proximos para sua doação</p>
-	    <form method="get">
-		    <label>Cidade
-		     	<select name="cidade" id="cidade">
-				<option>Selecione</option>
-				</select>
-			</label>
-			<br>
-			
+<body onload="criarCidade()">
+	<div id="container">
+		 <header>   
+	        <h1 id="titulo">DOE SANGUE</h1>
+		    <p> Nesta etapa selecione a cidade em que você mora, assim mostraremos os hospitais mais proximos para sua doação</p>
+	    </header>
+	    	<h2>Instruções</h2>
+		<section class="instrucao">
+		        <ol>
+		            <li>Selecione seu estado</li>
+		            <li>Selecione sua cidade</li>
+		            <li>Selecione um hemonucleo</li>
+		        </ol>
+		</section>
+		<section class="escolha">
+	    <form method="get" id="formulario">
+		   
 			<a href="estado.html"><input type="button" id="btn" value="Anterior"></a>
 			<a href="hemonucleo.html"><input type="button" id="btn" value="Próximo"></a>
+		</section>	
+			
 		</form>
 	</div>
 <body>
