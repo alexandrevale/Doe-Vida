@@ -1,26 +1,46 @@
-    html{
-	font-family: century gothic;
-	}
-
 	body{
+    font-family: century gothic;
 	font-size: 18px;    
 	background-color:#fff; 
 	}
 	
 	h1{
 	color:red;
+    text-align: center;
 	}
 	
 	input{
 	margin:5px;	
     }
  
-	.centro{
-	text-align:center;
-	margin-right: 20%;
-	margin-left: 20%;
+	#container{
+    width: 80%;
+	margin-right: 10%;
+	margin-left: 10%;
 	margin-top: 5%;
 	}
+
+.instrucao{
+    text-align: left;
+    float: left;
+    width: 40%;
+    margin-right: 10%;
+    margin-top: 5%;
+    background-color:#ff0000;
+}
+.escolha{
+    text-align: left;
+    float: left;
+    padding-top: 10px;
+    width: 50%;
+    margin-top: 5%;
+    background-color:#00ff00;
+    
+}
+footer{
+    clear: both;
+    margin-top: 43%;
+}
 	
 	#btn{
 	color:#994029;
