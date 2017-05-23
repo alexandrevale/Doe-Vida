@@ -25,3 +25,19 @@ function criar(){
         }
     });    
 }
+
+function criarCidade(){
+    
+    $(".escolha").ready(function(){    
+        var p = document.getElementById("formulario");
+        var select = document.createElement("select");
+        var contCidade = document.createElement("option")
+        var labCidade = document.createElement("label");
+        labCidade.innerHTML = "Cidade";
+        contCidade.innerHTML = "Selecione"
+        
+        p.parentNode.insertBefore(select, p);
+        p.parentNode.insertBefore(labCidade,select);
+        select.appendChild(contCidade);
+});
+}
