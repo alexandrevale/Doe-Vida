@@ -6,6 +6,7 @@
 
 	<link href="css/main.css" rel="stylesheet">
 	<script src="js/doevida.js"></script>
+	<script src="js/bd.js"></script>
 	<script src="js/jquery-3.2.1.min.js"></script>
 </head>
 <body onload="criarCidade()">
@@ -23,13 +24,16 @@
 		        </ol>
 		</section>
 		<section class="escolha">
-	    <form method="get" id="formulario">
-		   
-			<a href="estado.html"><input type="button" id="btn" value="Anterior"></a>
-			<a href="hemonucleo.html"><input type="button" id="btn" value="Próximo"></a>
-		</section>	
-			
-		</form>
+		    <form method="get" id="formulario">
+			   
+				<a href="estado.html"><input type="button" id="btn" value="Anterior"></a>
+				<a href="hemonucleo.html"><input type="button" id="btn" value="Próximo"  ></a>
+						
+			</form>
+		</section>
+		
+		<button onclick="criarTabelaHemonucleo()">Criar Tabela</button>
 	</div>
+	
 <body>
 </html>

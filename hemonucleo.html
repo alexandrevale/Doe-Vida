@@ -5,22 +5,34 @@
 	<title> DOE SANGUE </title>
 	<link href="css/main.css" rel="stylesheet">
 	<script src="js/doevida.js"></script>
+	<script src="js/bd.js"></script>
 	<script src="js/jquery-3.2.1.min.js"></script>
 </head>
-<body>
-	<div class="centro">
-		<h1 id="titulo">DOE SANGUE</h1>
-	    <h2>3ª etapa- Selecione o hemonúcleo</h2>
-	    <p> Nesta etapa disponibilizamos os hemonúcleos mais proximos da onde você mora, selecione um para a próxima etapa </p>
-	    <form method="get">
-	    <label>Hemonúcleo
-	     	<select name="hemonucleo" id="hemonucleo">
-			<option>Selecione</option>
-			</select>
-		</label>
-		<br>    
-	   	<a href="cidade.html"><input type="button" id="btn" value="Anterior"></a>
-		<a href="escolha.html"><input type="button" id="btn" value="Próximo"></a>
+<body onload="getDB()">
+	<div id="container">
+		<header>
+			<h1 id="titulo">DOE SANGUE</h1>
+		    <p> Nesta etapa disponibilizamos os hemonúcleos mais proximos da onde você mora, selecione um para a próxima etapa </p>
+	    </header>
+	    <section class="instrucao">
+		        <ol>
+		            <li>Selecione seu estado</li>
+		            <li>Selecione sua cidade</li>
+		            <li>Selecione um hemonucleo</li>
+		        </ol>
+		</section>
+	    <section section class="escolha">
+		    <form method="get" id="formulario">
+		        <table id="tb1">
+			    	<thead>
+		                <th>Locais para Doação</th>
+		                
+		            </thead>
+		            <tbody>
+		            </tbody>
+		    	</table>
+		   </form>
+		</section>
 	</div>
 <body>
 </html>
