@@ -8,15 +8,27 @@
 	<script src="js/jquery-3.2.1.min.js"></script>
 </head>
 <body>
-	<div class="centro">
+<body onload="getDB()">
+	<div id="container">
+    <header>
 		<h1 id="titulo">DOE SANGUE</h1>
-	    <h2>Lista de pessoas que precisam de doação</h2>
-	    <p> Parabéns pela iniciativa, escolha uma pessoa da lista para doar, anote o nome completo e faça sua doação a ela no hemonúcleo selecionado na ultima etapa</p>
+		<p class="texto"> Parabéns pela iniciativa, escolha uma pessoa da lista para doar, anote o nome completo e faça sua doação a ela no hemonúcleo selecionado na ultima etapa</p>
 	    <p> Doe sangue, doe vida!</p>
-	    <form method="get">
-		    <div id="lista"></div>
-			<a href="escolha.html"><input type="button" id="btn" value="Anterior"></a>
+    </header>
+	
+    <section section class="doacao"> <!--classe da ju #escolha---->
+		<form method="get" id="formulario">
+		<table id="tb2">  <!--id da ju #tb1---->
+			<thead>
+		    <th>Nomes</th>
+		       </thead>
+		       <tbody>
+		       </tbody>
+		</table>	   
 		</form>
-	</div>
-<body>
+		
+		   <button class="btn" onclick="location.href='escolha.html'">Anterior</button>    
+	</section>
+</div>	
+</body>
 </html>

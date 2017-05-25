@@ -30,13 +30,14 @@ input{
     width: 50%;
     margin-top: 5%;
 }
+
 footer{
     clear: both;
     margin-top: 43%;
 }
-#btn{
+.btn{
 	color: #994029;
-	font-size: 30px; 
+	font-size: 25px; 
     background-color: #fff;
     border-color: #FF6868;
     border-radius: 4px;
@@ -65,6 +66,20 @@ footer{
     padding: 12px;
     font-family: century gothic;
 }
-#texto{
+
+.texto{
 	text-align: justify;
+	margin-left:15%;
+	margin-right:15%;
+	
+}
+
+body{
+    text-align: center;
+    margin-left:10%;
+	margin-right:10%;
+}
+
+.doacao{
+    text-align:center;
 }
