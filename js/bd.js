@@ -18,6 +18,7 @@ function criarTabelaHemonucleo(){
         var getHospital1 = store.get(1); 
         var geHospital2 = store.get(2); 
     
+        window.location.href="hemonucleo.html";
         tx.oncomplete = function() {
             db.close();
         };
