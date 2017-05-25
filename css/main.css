@@ -1,32 +1,27 @@
-	body{
+body{
     font-family: century gothic;
 	font-size: 18px;    
-	background-color:#fff; 
-	}
-	
-	h1{
-	color:red;
+	background-color: #fff; 
+}
+h1{
+	color: red;
     text-align: center;
-	}
-	
-	input{
-	margin:5px;	
-    }
- 
-	#container{
+}
+input{
+	margin: 5px;	
+}
+#container{
     width: 80%;
 	margin-right: 10%;
 	margin-left: 10%;
 	margin-top: 5%;
-	}
-
+}
 .instrucao{
     text-align: left;
     float: left;
     width: 40%;
     margin-right: 10%;
     margin-top: 5%;
-
 }
 .escolha{
     text-align: left;
@@ -34,49 +29,42 @@
     padding-top: 10px;
     width: 50%;
     margin-top: 5%;
-    
 }
 footer{
     clear: both;
     margin-top: 43%;
 }
-	
-	#btn{
-	color:#994029;
-	font-size:30px; 
-    background-color:#fff;
-    border-color:#FF6868;
+#btn{
+	color: #994029;
+	font-size: 30px; 
+    background-color: #fff;
+    border-color: #FF6868;
     border-radius: 4px;
     border: 1px solid transparent;
     margin: 30px;
     padding: 12px;
     font-family: century gothic;
-	}
-	
-	#botao{
-	color:#fff;
-	font-size:30px; 
+}
+#botao{
+	color: #fff;
+	font-size: 30px; 
     background-color: rgba(255, 0, 0, 0.6);
-    border-color:#FF6868;
+    border-color: #FF6868;
     border: 1px solid transparent;
     margin: 15px;
     padding: 12px;
     font-family: century gothic;
-	}
-	
-	#botaook{
-	color:#fff;
-	font-size:20px; 
+}
+#botaook{
+	color: #fff;
+	font-size: 20px; 
     background-color: rgba(255, 0, 0, 0.6);
-    border-color:#FF6868;
+    border-color: #FF6868;
     border: 1px solid transparent;
     margin: 15px;
     padding: 12px;
     font-family: century gothic;
-	}
-	#texto{
+}
+#texto{
 	text-align: justify;
-	
-	}
-	
-	
+}
