@@ -1,10 +1,7 @@
 function criarEstado(){
-    var estados = ["Acre","Alagoas","Amapá","Amazonas","Bahia","Ceará","Ceará","Distrito Federal",
-                 "Espírito Santo","Goiás","Maranhão","Mato Grosso","Mato Grosso do Sul","Minas Gerais",
-                 "Pará","Paraíba","Paraná","Pernambuco","Piauí","Rio de Janeiro","Rio Grande do Norte",
-                 "Rio Grande do Sul","Rondônia","Roraima","Santa Catarina","São Paulo","Sergipe","Tocantins"];     
+    var estados = ["Minas Gerais","Paraná","Pernambuco","Rio de Janeiro","São Paulo","Sergipe"];     
     var selectEstado = document.getElementById("appEstado");
-    //lista os estado do objdb no select
+    //lista os estado do objeto "estados" no select
     estados.forEach(function(estado, i) {
         var conteudo = document.createElement("option");
         conteudo.innerHTML = estado;
@@ -19,11 +16,36 @@ function validarEstado(){
     if(verifica === "Selecionado"){
         sweetAlert("Por favor, selecione um estado.");
     }else if(verifica !== "São Paulo"){
-        sweetAlert("Estamos em testes, desculpe o transtorno. No momento apenas o estado de São Paulo esta atualizado.");
+        sweetAlert("Estamos em testes, desculpe o transtorno.","No momento apenas o estado de São Paulo esta atualizado.");
     }else{
         window.location.href = 'cidade.html';
     }
 }
+
+function criarCidade(){
+    var cidades = ["Cubatão","Praia Grande","São Paulo","Santos","São Vicente"];     
+    var selectCidade = document.getElementById("appCidade");
+    //lista os estado do objeto "cidades" no select
+    cidades.forEach(function(cidade, i) {
+        var conteudo = document.createElement("option");
+        conteudo.innerHTML = cidade;
+        conteudo.value = cidade;
+        selectCidade.appendChild(conteudo);
+    });
+}
+
+function validarCidade(){
+    var selectCidade = document.getElementById("appCidade");
+    var verifica = selectCidade.options[selectCidade.selectedIndex].value;
+    if(verifica === "Selecionado"){
+        sweetAlert("Por favor, selecione uma cidade.");
+    }else if(verifica !== "Santos"){
+        sweetAlert("Estamos em testes, desculpe o transtorno.","No momento apenas a cidade de Santos esta atualizada.");
+    }else{
+        window.location.href = 'hemonucleo.html';
+    }
+}
+
 function getDB(){ 
 	var open = indexedDB.open("Hemonucleo", 1);
 	open.onsuccess = function() {

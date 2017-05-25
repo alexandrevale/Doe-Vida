@@ -5,7 +5,9 @@
 	<title> DOE SANGUE </title>
 
 	<link href="css/main.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/sweetalert.css">
 	<script src="js/doevida.js"></script>
+	<script src="js/sweetalert.js"></script>
 	<script src="js/bd.js"></script>
 	<script src="js/jquery-3.2.1.min.js"></script>
 </head>
@@ -15,25 +17,24 @@
 	        <h1 id="titulo">DOE SANGUE</h1>
 		    <p> Nesta etapa selecione a cidade em que você mora, assim mostraremos os hospitais mais proximos para sua doação</p>
 	    </header>
-	    	<h2>Instruções</h2>
-	<section class="instrucao">
-            <ol>
-                <li>Selecione seu estado</li>
-                <li>Selecione sua cidade</li>
-                <li>Selecione um hemonucleo</li>
-            </ol>
-        </section>
-		<section class="escolha">
-		    <form method="get" id="formulario">
-			   
-				<a href="estado.html"><input type="button" class="btn" value="Anterior"></a>
-				<a href="hemonucleo.html"><input type="button" class="btn" value="Próximo"  ></a>
-						
-			</form>
-		</section>
-		
-		<button onclick="criarTabelaHemonucleo()">Criar Tabela</button>
+	   	<h2>Instruções</h2>
+		<section class="instrucao">
+        	<ol>
+        		<li>Selecione seu estado</li>
+            	<li>Selecione sua cidade</li>
+            	<li>Selecione um hemonucleo</li>
+        	</ol>
+    	</section>
+		<section class="escolha" id="escolha">
+            <form id="formCidade">
+                <label for="cidade">Cidade: </label>
+                <select name="cidade" id="appCidade">
+                    <option name="Selecione" value="Selecionado" id="padrao">Selecione</option>
+                </select>
+            </form>
+        	<button class="btn" onclick="location.href='estado.html'">Anterior</button></a>
+            <button class="btn" onclick="validarCidade()">Próximo</button>    
+        </section>		
 	</div>
-	
 </body>
 </html>
