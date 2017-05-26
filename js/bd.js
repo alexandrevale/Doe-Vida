@@ -18,10 +18,17 @@ function criarTabelaHemonucleo(){
         var getHospital1 = store.get(1); 
         var geHospital2 = store.get(2); 
     
-        window.location.href="hemonucleo.html";
+        var selectCidade = document.getElementById("appCidade");
+        var verifica = selectCidade.options[selectCidade.selectedIndex].value;
+        if(verifica === "Selecionado"){
+            sweetAlert("Por favor, selecione uma cidade.");
+        }else if(verifica !== "Santos"){
+            sweetAlert("Estamos em testes, desculpe o transtorno.","No momento apenas a cidade de Santos esta atualizada.");
+        }else{
+            window.location.href = 'hemonucleo.html';
+        }
         tx.oncomplete = function() {
             db.close();
         };
     }   
-
 }

@@ -34,18 +34,6 @@ function criarCidade(){
     });
 }
 
-function validarCidade(){
-    var selectCidade = document.getElementById("appCidade");
-    var verifica = selectCidade.options[selectCidade.selectedIndex].value;
-    if(verifica === "Selecionado"){
-        sweetAlert("Por favor, selecione uma cidade.");
-    }else if(verifica !== "Santos"){
-        sweetAlert("Estamos em testes, desculpe o transtorno.","No momento apenas a cidade de Santos esta atualizada.");
-    }else{
-        window.location.href = 'hemonucleo.html';
-    }
-}
-
 function getDB(){ 
 	var open = indexedDB.open("Hemonucleo", 1);
 	open.onsuccess = function() {
