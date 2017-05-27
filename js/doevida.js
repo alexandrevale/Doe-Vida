@@ -1,5 +1,5 @@
-function criarEstado(){
-    var estados = ["Minas Gerais","Paraná","Pernambuco","Rio de Janeiro","São Paulo","Sergipe"];     
+window.addEventListener("load", function criarEstado(){
+    var estados = ["Minas Gerais","Paraná","Pernambuco","Rio de Janeiro","São Paulo","Sergipe"];
     var selectEstado = document.getElementById("appEstado");
     //lista os estado do objeto "estados" no select
     estados.forEach(function(estado, i) {
@@ -8,21 +8,25 @@ function criarEstado(){
         conteudo.value = estado;
         selectEstado.appendChild(conteudo);
     });
-}
 
-function validarEstado(){
-    var selectEstado = document.getElementById("appEstado");
-    var verifica = selectEstado.options[selectEstado.selectedIndex].value;
-    if(verifica === "Selecionado"){
-        sweetAlert("Por favor, selecione um estado.");
-    }else if(verifica !== "São Paulo"){
-        sweetAlert("Estamos em testes, desculpe o transtorno.","No momento apenas o estado de São Paulo esta atualizado.");
-    }else{
-        window.location.href = 'cidade.html';
-    }
-}
+    var validarEstado = document.getElementById("btnProximoEstado");
+    validarEstado.addEventListener("click", function(){
+        var selectEstado = document.getElementById("appEstado");
+        var verifica = selectEstado.options[selectEstado.selectedIndex].value;
+        if(verifica === "Selecionado"){
+            sweetAlert("Por favor, selecione um estado.");
+        }else if(verifica !== "São Paulo"){
+            sweetAlert("Estamos em testes, desculpe o transtorno.","No momento apenas o estado de São Paulo esta atualizado.");
+        }else{
+            window.location.href = 'cidade.html';
+        }
+    });  
+    document.getElementById("btnAnteriorEstado").addEventListener("click", function(){
+        window.location.href = 'home.html';
+    });
+});
 
-function criarCidade(){
+window.addEventListener("load", function criarCidade(){
     var cidades = ["Cubatão","Praia Grande","São Paulo","Santos","São Vicente"];     
     var selectCidade = document.getElementById("appCidade");
     //lista os estado do objeto "cidades" no select
@@ -32,7 +36,7 @@ function criarCidade(){
         conteudo.value = cidade;
         selectCidade.appendChild(conteudo);
     });
-}
+});
 
 function getDB(){ 
 	var open = indexedDB.open("Hemonucleo", 1);
@@ -51,6 +55,12 @@ function getDB(){
 		var tr2 = document.createElement("tr");
 		var tdHospital = document.createElement("td");
 		var tdHospital2 = document.createElement("td");
+		var btnDoar = document.createElement("button"); 
+		btnDoar.setAttribute("class","btn");
+		btnDoar.innerHTML = "Quero Doar";
+		$("btnDoar").click(function(){
+		   $(this).window.location.href = 'doar.html';
+		});
 		var tbody = document.querySelector("tbody");
         
         //recebe os valores passados no bd.js para as tds
@@ -61,8 +71,9 @@ function getDB(){
 		getHospital2.onsuccess = function() {
 			tdHospital2.innerHTML = "<br>" + getHospital2.result.name + " <br> " + getHospital2.result.description + "<br>" + getHospital2.result.code;
 		};
-
+        
     	tr.appendChild(tdHospital);
+    	tr.appendChild(btnDoar);
     	tr2.appendChild(tdHospital2);
     	tbody.appendChild(tr);
     	tbody.appendChild(tr2);

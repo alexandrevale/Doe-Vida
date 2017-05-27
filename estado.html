@@ -10,7 +10,7 @@
 	<script src="js/sweetalert.min.js"></script>
 	
 </head>
-<body onload="criarEstado()">
+<body>
     <div id="container">
         <header>   
             <h1 id="titulo">DOE SANGUE</h1>
@@ -31,8 +31,8 @@
                     <option name="Selecione" value="Selecionado" id="padrao">Selecione</option>
                 </select>
             </form>
-        	<button class="btn" onclick="location.href='home.html'">Anterior</button></a>
-            <button class="btn" onclick="validarEstado()">Próximo</button>    
+        	<button class="btn" id="btnAnteriorEstado">Anterior</button></a>
+            <button class="btn" id="btnProximoEstado">Próximo</button>    
         </section>
     </div>
 </body>
