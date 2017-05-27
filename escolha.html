@@ -4,19 +4,32 @@
 	<meta charset="utf-8">
 	<title> DOE SANGUE </title>
 	<link href="css/main.css" rel="stylesheet">
-	<script src="js/doevida.js"></script>
+	<script src="js/doacao.js"></script>
 	<script src="js/jquery-3.2.1.min.js"></script>
 </head>
 <body>
 	<div class="centro">
 		<h1 id="titulo">DOE SANGUE</h1>
-	    <h2>4ª etapa - Escolha</h2>
+	    <h2>Faça sua Escolha</h2>
 	    <p> Nessa etapa escolha se deseja doar ou receber</p>
-	    <form method="get">
-		    <a href="doar.html"><input type="button" id="botao" value="   Doar   "></a>
-		    <br>
-		    <a href="receber.html"><input type="button" id="botao" value="Receber"></a>
-			<br>
+	    
+	    
+	   <button class="botao" name="doar" onclick="Doar()">Doar</button> 
+	    <form method="get" id="formulario">
+		<table id="tabela">  
+			<thead>
+		    <th>  </th>
+		       </thead>
+		       <tbody>
+		       </tbody>
+		</table>	   
+		</form>
+     
+     	<button class="botao" name="receber" onclick="Receber()">Receber</button> 
+
+     	 	
+		  
+       <form method="get">
 			<a href="hemonucleo.html"><input type="button" class="btn" value="Anterior"></a>
 		</form>
 	</div>

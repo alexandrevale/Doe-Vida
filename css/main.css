@@ -1,7 +1,15 @@
+#tabela{ 
+   margin-left: 35%; 
+   margin-right: 35%;
+   
+}
 body{
     font-family: century gothic;
 	font-size: 18px;    
 	background-color: #fff; 
+	text-align: center;
+    margin-left:10%;
+	margin-right:10%;
 }
 h1{
 	color: red;
@@ -46,7 +54,7 @@ footer{
     padding: 12px;
     font-family: century gothic;
 }
-#botao{
+.botao{
 	color: #fff;
 	font-size: 30px; 
     background-color: rgba(255, 0, 0, 0.6);
@@ -55,6 +63,7 @@ footer{
     margin: 15px;
     padding: 12px;
     font-family: century gothic;
+    
 }
 #botaook{
 	color: #fff;
@@ -74,11 +83,6 @@ footer{
 	
 }
 
-body{
-    text-align: center;
-    margin-left:10%;
-	margin-right:10%;
-}
 
 .doacao{
     text-align:center;
