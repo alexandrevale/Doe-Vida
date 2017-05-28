@@ -1,7 +1,6 @@
 #tabela{ 
    margin-left: 35%; 
    margin-right: 35%;
-   
 }
 body{
     font-family: century gothic;
@@ -29,13 +28,6 @@ input{
     float: left;
     width: 40%;
     margin-right: 10%;
-    margin-top: 5%;
-}
-.escolha{
-    text-align: left;
-    float: left;
-    padding-top: 10px;
-    width: 50%;
     margin-top: 5%;
 }
 
@@ -91,7 +83,7 @@ footer{
 }
 
 
-.doacao{
+.centro{
     text-align:center;
 }
 

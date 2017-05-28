@@ -1,10 +1,10 @@
-
 function inserirRegistro(){
     var nome = document.forms.form1.name.value
     var last = document.forms.form1.last.value;
     var tipo = document.forms.form1.tipo.value;
+    var hemonucleo = document.forms.form1.hemonucleo.value;
     var id = parseInt(document.forms.form1.id.value);
-     inserir({"id":id,"name":{first:nome, "last":last},"tipo":tipo})
+     inserir({"id":id,"name":{first:nome, "last":last},"tipo":tipo,"hemonucleo":hemonucleo})
 }
 
 function inserir(obj){
@@ -20,8 +20,7 @@ function inserir(obj){
         var db = open.result;
         var tx = db.transaction("MyObjectStore", "readwrite");
         var store = tx.objectStore("MyObjectStore");
-        //var index = store.index("NameIndex");
-    
+ 
         store.put(obj);
         
         tx.oncomplete = function() {
@@ -32,13 +31,10 @@ function inserir(obj){
 }
 
 function buscar(){
-   //  getObjId(document.forms.form2.name.value); 
-   
-     getObjId(parseInt(document.forms.form2.id.value));
+      getObjId(parseInt(document.forms.form2.id.value)); 
   
 }
 
-//function getObjId(name){ //estava id
     function getObjId(id){
         var open = indexedDB.open("Banco", 1);
         open.onsuccess = function(){
@@ -46,7 +42,7 @@ function buscar(){
             var tx = db.transaction("MyObjectStore", "readwrite");
             var store = tx.objectStore("MyObjectStore");
             
-            //var getFirst = store.get(name); //estava id
+          
             var getFirst = store.get(id);
              
             getFirst.onsuccess = function() {
@@ -59,12 +55,6 @@ function buscar(){
             };
         }
 }
-/*
-function listar(obj) {
-    var p = document.createElement('p');
-    p.innerHTML = obj.id + " " + obj.name.first + " " + obj.name.last + " " + obj.age;
-    document.getElementById("h1").appendChild(p);
-}*/
 
 function getObjIndex(idx){
         var open = indexedDB.open("Banco", 1);
@@ -89,17 +79,17 @@ function getObjIndex(idx){
 // MOSTRAR DADOS CADASTRADOS NA TABELA
 
 function mostrar(){
-    var divres = document.getElementById("result");
+    var divres = document.getElementById("result"); //p id="result" que recebe a função
     divres.innerHTML = "";
     var open = indexedDB.open("Banco", 1);
     open.onsuccess = function() {
         var db = open.result;
-        //divres.innerHTML = "";
         var trans = db.transaction("MyObjectStore","readonly");
         var armazenar = trans.objectStore("MyObjectStore");
         var cursor = armazenar.openCursor();
         
         cursor.addEventListener("success", mostrarDados, false);
+        
     }
 }
 
@@ -107,7 +97,7 @@ function mostrarDados(e){
     var cursor = e.target.result;
     if(cursor){
         var p = document.createElement("p");
-        p.innerHTML = "Nome: "+cursor.value.name.first+" tipo: "+cursor.value.tipo;
+        p.innerHTML = " "+cursor.value.name.first+ " "+cursor.value.name.last+" "+cursor.value.tipo+"/ Hemonucleo "+cursor.value.hemonucleo;
         var divres = document.getElementById("result");
         divres.appendChild(p);
         cursor.continue();

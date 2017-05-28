@@ -17,46 +17,38 @@
 	     
 	   <!--Opção doar sangue-->
         
-     <button class="botao" id="Clique" onclick="mostrar()">Doar</button>
-     
-     
-   <!---- <script>
-     $( "#Clique" ).click(function() {
-         $("#conteudo1").css("display","block");
-    });
-   </script>--->
-	   
-	    <div id="conteudo1"> <!--display none, só aparece se clicar no botao a cima -->
+     <button class="botao" id="Clique" onclick="mostrar()">Doar</button> <!--id="Clique referente ao jquery.js-->
+     <div id="conteudo1"> <!--display none, só aparece se clicar no botao a cima -->
 	        
-	    <p class="texto">Veja a lista de pacientes cadastrados, escolha um que seja compatível, se preferir pesquise pelo nome de quem você deseja doar </p>
-        <p id="result">
-            
+	    <p class="texto">Veja a lista de pacientes cadastrados, escolha um que seja compatível, se preferir pesquise pelo CPF de quem você deseja doar </p>
+        <p id="result"> <!--Referente ao banco.js-->
+        
 	    <!--Opção buscar paciente-->
 	    <h1 id="h1"></h1>      
             <form name="form2">
                 Busca: <input type="number" name="id"/><br>
             </form>
-        <button class="confirma" onclick="buscar()">Buscar</button>
+                <button class="confirma" onclick="buscar()">Buscar</button>
        
         </div>
-         <br>
-       
-           
-	    <!--Opção receber -->
-	    <button class="botao" id="Clique2">Receber</button> 
-           <div id="conteudo2">  
+        <br>
+        
+	 <!--Opção receber -->
+	 
+	 <button class="botao" id="Clique2">Receber</button> <!--id="Clique2() referente ao jquery.js-->
+     <div id="conteudo2">  <!--display none, só aparece se clicar no botao a cima -->
        <p>Para que seu cadastro seja realizado, informe seus dados</p>
        <p>Após efetuar seu cadastro, seus dados serão disponibilizados na tela do doador</p>
-       <p>Compartilhe com seus amigos, seu nome poderá ser pesquisado</p>
+       <p>Compartilhe com seus amigos, você poderá ser pesquisado pelo CPF </p>
 	   <form name="form1">
-            ID: <input type="number" name="id"/> <br>
-            Name: <input type="text" name="name"/><br>
-            Last: <input type="text" name="last"/><br>
-            Tipo: <input type="text" name="tipo"/><br>
-            Age: <input type="number" name="age"/>
+            CPF: <input type="number" name="id"/> <br>
+            Nome: <input type="text" name="name"/><br>
+            Sobrenome: <input type="text" name="last"/><br>
+            Hemonucleo: <input type="text" name="hemonucleo"/><br>
+            Tipo sanguinio: <input type="text" name="tipo" size="3"/><br>
         </form>
-        
-        <button class="confirma" onclick="inserirRegistro()">OK</button>
+            <button class="confirma" onclick="inserirRegistro()">OK</button>
+
 
 	    <br>
          <a href="hemonucleo.html"><input type="button" class="btn" value="Anterior"></a>   
