@@ -63,7 +63,14 @@ footer{
     margin: 15px;
     padding: 12px;
     font-family: century gothic;
-    
+
+}
+
+.confirma{
+    border-color:#FF6868;
+    background-color: #fff;
+    font-family: century gothic;
+    padding: 5px;
 }
 #botaook{
 	color: #fff;
@@ -86,4 +93,9 @@ footer{
 
 .doacao{
     text-align:center;
+}
+
+#conteudo1, #conteudo2{
+    
+    display: none;
 }
