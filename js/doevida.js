@@ -36,10 +36,51 @@ window.addEventListener("load", function criarCidade(){
         conteudo.value = cidade;
         selectCidade.appendChild(conteudo);
     });
+    
+    var validarCidade = document.getElementById("btnProximoCidade");
+    validarCidade.addEventListener("click", function(){
+        var selectCidade = document.getElementById("appCidade");
+        var verifica = selectCidade.options[selectCidade.selectedIndex].value;
+        if(verifica === "Selecionado"){
+            sweetAlert("Por favor, selecione uma cidade.");
+        }else if(verifica !== "Santos"){
+            sweetAlert("Estamos em testes, desculpe o transtorno.","No momento apenas a cidade de Santos esta atualizada.");
+        }else{
+            window.addEventListener("click", function criarTabelaHemonucleo(){
+                var open = indexedDB.open("Hemonucleo", 1);
+                open.onupgradeneeded = function() {
+                    var db = open.result; 
+                    var store = db.createObjectStore("MyObjectStore", {keyPath: "id"}); 
+                    var index = store.createIndex("NameIndex", ["name.last", "name.first"]);
+                };
+    
+                open.onsuccess = function() { 
+                    var db = open.result;
+                    var tx = db.transaction("MyObjectStore", "readwrite");
+                    var store = tx.objectStore("MyObjectStore"); 
+                    var index = store.index("NameIndex");
+
+                    store.put({id: 1, name: "Hemonúcleo de Santos", description: "R. Oswaldo Cruz, 197 - Boqueirão", code: "Telefone: (13) 3202-1428"});
+                    store.put({id: 2, name: "Santa Casa de Santos", description: "Rua Doutor Cláudio Luís da Costa, 50 - Jabaquara", code: "Telefone: (13) 3202-1428"});
+        
+                    var getHospital1 = store.get(1); 
+                    var geHospital2 = store.get(2); 
+                
+                    tx.oncomplete = function() {
+                        db.close();
+                    };
+                }
+                window.location.href = 'hemonucleo.html';
+            });
+        }
+    });  
+    document.getElementById("btnAnteriorCidade").addEventListener("click", function(){
+        window.location.href = 'estado.html';
+    });
 });
 
-function getDB(){ 
-	var open = indexedDB.open("Hemonucleo", 1);
+window.addEventListener("load",function(){
+    var open = indexedDB.open("Hemonucleo", 1);
 	open.onsuccess = function() {
 		var db = open.result;
 		var tx = db.transaction("MyObjectStore", "readwrite");
@@ -55,12 +96,13 @@ function getDB(){
 		var tr2 = document.createElement("tr");
 		var tdHospital = document.createElement("td");
 		var tdHospital2 = document.createElement("td");
-		var btnDoar = document.createElement("button"); 
+		/*
 		btnDoar.setAttribute("class","btn");
 		btnDoar.innerHTML = "Quero Doar";
-		$("btnDoar").click(function(){
-		   $(this).window.location.href = 'doar.html';
-		});
+        document.getElementsByClassName("btn").addEventListener("click", function(){
+            window.location.href = 'doar.html';
+        });
+        */
 		var tbody = document.querySelector("tbody");
         
         //recebe os valores passados no bd.js para as tds
@@ -73,7 +115,6 @@ function getDB(){
 		};
         
     	tr.appendChild(tdHospital);
-    	tr.appendChild(btnDoar);
     	tr2.appendChild(tdHospital2);
     	tbody.appendChild(tr);
     	tbody.appendChild(tr2);
@@ -83,4 +124,20 @@ function getDB(){
     		db.close();
     	};
 	}
-}
+	document.getElementById("btnAnteriorHemo").addEventListener("click", function(){
+        window.location.href = 'cidade.html';
+    });
+	document.getElementById("btnProximoHemo").addEventListener("click", function(){
+        window.location.href = 'escolha.html';
+    });
+});
+
+/*
+                
+                document.getElementById("btnProximoHemo").addEventListener("click",function(){
+                    window.location.href = 'hemonucleo.html'
+                });
+                
+<button class="btn" id="btnAnteriorHemo"onclick="location.href='cidade.html'">Anterior</button>
+<button class="btn" id="btnProximoHemo" onclick="location.href='escolha.html'">Próximo</button>
+*/
