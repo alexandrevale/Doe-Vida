@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> DOE SANGUE </title>
+	<link href="css/main.css" rel="stylesheet">
+	<script src="js/banco.js"></script>
+	<script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+	<div class="centro">
+		<h1 id="titulo">DOE SANGUE</h1>
+	    <h2>Faça sua Escolha</h2>
+	    <p> Nessa etapa escolha se deseja doar ou receber</p>
+	    
+	     
+	   <!--Opção doar sangue-->
+        
+     <button class="botao" id="Clique" onclick="mostrar()">Doar</button>
+     
+     
+   <!---- <script>
+     $( "#Clique" ).click(function() {
+         $("#conteudo1").css("display","block");
+    });
+   </script>--->
+	   
+	    <div id="conteudo1"> <!--display none, só aparece se clicar no botao a cima -->
+	        
+	    <p class="texto">Veja a lista de pacientes cadastrados, escolha um que seja compatível, se preferir pesquise pelo nome de quem você deseja doar </p>
+        <p id="result">
+            
+	    <!--Opção buscar paciente-->
+	    <h1 id="h1"></h1>      
+            <form name="form2">
+                Busca: <input type="number" name="id"/><br>
+            </form>
+        <button class="confirma" onclick="buscar()">Buscar</button>
+       
+        </div>
+         <br>
+       
+           
+	    <!--Opção receber -->
+	    <button class="botao" id="Clique2">Receber</button> 
+           <div id="conteudo2">  
+       <p>Para que seu cadastro seja realizado, informe seus dados</p>
+       <p>Após efetuar seu cadastro, seus dados serão disponibilizados na tela do doador</p>
+       <p>Compartilhe com seus amigos, seu nome poderá ser pesquisado</p>
+	   <form name="form1">
+            ID: <input type="number" name="id"/> <br>
+            Name: <input type="text" name="name"/><br>
+            Last: <input type="text" name="last"/><br>
+            Tipo: <input type="text" name="tipo"/><br>
+            Age: <input type="number" name="age"/>
+        </form>
+        
+        <button class="confirma" onclick="inserirRegistro()">OK</button>
+
+	    <br>
+         <a href="hemonucleo.html"><input type="button" class="btn" value="Anterior"></a>   
+        </div>
+    </body>
+</html>
+		 

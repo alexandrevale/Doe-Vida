@@ -5,9 +5,10 @@
 	<title> DOE SANGUE </title>
 	<link href="css/main.css" rel="stylesheet">
 	<script src="js/doevida.js"></script>
+	<script src="js/bd.js"></script>
 	<script src="js/jquery-3.2.1.min.js"></script>
 </head>
-<body>
+<body onload="getDB()">
 	<div id="container">
 		<header>
 			<h1 id="titulo">DOE SANGUE</h1>
@@ -20,7 +21,7 @@
 		            <li>Selecione um hemonucleo</li>
 		        </ol>
 		</section>
-	    <section class="escolha">
+	    <section section class="escolha">
 		    <form method="get" id="formulario">
 		        <table id="tb1">
 			    	<thead>
@@ -30,8 +31,8 @@
 		            </tbody>
 		    	</table>
 		   </form>
-		    <button class="btn" id="btnAnteriorHemo">Anterior</button>
-            <button class="btn" id="btnProximoHemo">Próximo</button>
+		    <button class="btn" onclick="location.href='cidade.html'">Anterior</button>
+            <button class="btn" onclick="location.href='opcao.html'">Próximo</button>
 		</section>
 	</div>
 </body>
