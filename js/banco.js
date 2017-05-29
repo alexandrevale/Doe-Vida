@@ -45,7 +45,7 @@ function getObjId(id){
              
         getFirst.onsuccess = function() {
             var obj = getFirst.result;
-            document.getElementById("h1").innerHTML = obj.name.first + " " + obj.name.last; 
+            document.getElementById("h2").innerHTML = "Nome: "+obj.name.first + " " + obj.name.last+ "<br> Tipo sanguíneo: "+obj.tipo+ "<br> Hemonucleo: "+obj.hemonucleo; 
         };
             
         tx.oncomplete = function() {
@@ -78,26 +78,26 @@ function getObjIndex(idx){
 
 function mostrar(){
     var divres = document.getElementById("result"); //p id="result" que recebe a função
-    divres.innerHTML = "";
+    divres.innerHTML = ""; //pra limpar cada vez que clicar 
     var open = indexedDB.open("Banco", 1);
     open.onsuccess = function() {
         var db = open.result;
         var trans = db.transaction("MyObjectStore","readonly");
         var armazenar = trans.objectStore("MyObjectStore");
-        var cursor = armazenar.openCursor();
+        var cursor = armazenar.openCursor(); //curso receber o evento do botao doar e faz a função de mostrarDados
         
-        cursor.addEventListener("success", mostrarDados, false);
+        cursor.addEventListener("success", mostrarDados);
         
     }
 }
 
 function mostrarDados(e){
-    var cursor = e.target.result;
+    var cursor = e.target.result; //target representa a 1 linha 
     if(cursor){
-        var p = document.createElement("p");
+        var p = document.createElement("p"); //cria um p pra cada resultado e joga na divres 
         p.innerHTML = "Nome: "+cursor.value.name.first+ " "+cursor.value.name.last+"<br> Tipo sanguíneo: "+cursor.value.tipo+"<br> Hemonúcleo: "+cursor.value.hemonucleo;
         var divres = document.getElementById("result");
-        divres.appendChild(p);
-        cursor.continue();
+        divres.appendChild(p); //coloca o p na divres (div resultado)
+        cursor.continue(); //tipo contador, sobe pro segundo, terceiro....
     }
 }
