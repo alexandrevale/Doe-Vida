@@ -16,17 +16,9 @@ function criarTabelaHemonucleo(){
         store.put({id: 2, name: "Santa Casa de Santos", description: "Rua Doutor Cláudio Luís da Costa, 50 - Jabaquara", code: "Telefone: (13) 3202-1428"});
         
         var getHospital1 = store.get(1); 
-        var geHospital2 = store.get(2); 
+        var getHospital2 = store.get(2); 
     
-        var selectCidade = document.getElementById("appCidade");
-        var verifica = selectCidade.options[selectCidade.selectedIndex].value;
-        if(verifica === "Selecionado"){
-            sweetAlert("Por favor, selecione uma cidade.");
-        }else if(verifica !== "Santos"){
-            sweetAlert("Estamos em testes, desculpe o transtorno.","No momento apenas a cidade de Santos esta atualizada.");
-        }else{
-            window.location.href = 'hemonucleo.html';
-        }
+        
         tx.oncomplete = function() {
             db.close();
         };
