@@ -1,12 +1,15 @@
 $(main)
 
-function main (){
- $( "#Clique" ).click(function() {
-         $("#conteudo1").css("display","block");
-    });
+function main(){
+ $("#btnDoar").click(function() {
+  $("#conteudo1").css("display","inline");
+ });
     
- $( "#Clique2" ).click(function() {
-         $("#conteudo2").css("display","block");
-    });
-    
+ $("#btnReceber").click(function() {
+  $("#conteudo2").css("display","inline");
+ });
+ 
+ $("#btnAnteriorOpcao").click(function() {
+    window.location.href = 'hemonucleo.html';
+ });
 }

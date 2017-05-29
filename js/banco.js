@@ -24,56 +24,54 @@ function inserir(obj){
         store.put(obj);
         
         tx.oncomplete = function() {
-            alert("Inserido com sucesso")
+            alert("Cadastrado com sucesso");
             db.close();
         };
     }
 }
 
 function buscar(){
-      getObjId(parseInt(document.forms.form2.id.value)); 
-  
+    getObjId(parseInt(document.forms.form2.id.value)); 
 }
 
-    function getObjId(id){
-        var open = indexedDB.open("Banco", 1);
-        open.onsuccess = function(){
-            var db = open.result;
-            var tx = db.transaction("MyObjectStore", "readwrite");
-            var store = tx.objectStore("MyObjectStore");
+function getObjId(id){
+    var open = indexedDB.open("Banco", 1);
+    open.onsuccess = function(){
+        var db = open.result;
+        var tx = db.transaction("MyObjectStore", "readwrite");
+        var store = tx.objectStore("MyObjectStore");
             
-          
-            var getFirst = store.get(id);
+        var getFirst = store.get(id);
              
-            getFirst.onsuccess = function() {
-                var obj = getFirst.result;
-               document.getElementById("h1").innerHTML = obj.name.first + " " + obj.name.last; 
-            };
+        getFirst.onsuccess = function() {
+            var obj = getFirst.result;
+            document.getElementById("h1").innerHTML = obj.name.first + " " + obj.name.last; 
+        };
             
-            tx.oncomplete = function() {
-                db.close();
-            };
-        }
+        tx.oncomplete = function() {
+            db.close();
+        };
+    }
 }
 
 function getObjIndex(idx){
-        var open = indexedDB.open("Banco", 1);
-        open.onsuccess = function(){
-            var db = open.result;
-            var tx = db.transaction("MyObjectStore", "readwrite");
-            var store = tx.objectStore("MyObjectStore");
-            var index = store.index("NameIndex");
+    var open = indexedDB.open("Banco", 1);
+    open.onsuccess = function(){
+        var db = open.result;
+        var tx = db.transaction("MyObjectStore", "readwrite");
+        var store = tx.objectStore("MyObjectStore");
+        var index = store.index("NameIndex");
             
-            var getFirst = index.get(idx);
+        var getFirst = index.get(idx);
             
-            getFirst.onsuccess = function() {
-                var obj = getFirst.result;
-                document.getElementById("h1").innerHTML = obj.name.first; 
-            };
-            tx.oncomplete = function() {
-                db.close();
-            };
-        }
+        getFirst.onsuccess = function() {
+            var obj = getFirst.result;
+            document.getElementById("h1").innerHTML = obj.name.first; 
+        };
+        tx.oncomplete = function() {
+            db.close();
+        };
+    }
 }       
 
 // MOSTRAR DADOS CADASTRADOS NA TABELA
@@ -97,11 +95,9 @@ function mostrarDados(e){
     var cursor = e.target.result;
     if(cursor){
         var p = document.createElement("p");
-        p.innerHTML = " "+cursor.value.name.first+ " "+cursor.value.name.last+" "+cursor.value.tipo+"/ Hemonucleo "+cursor.value.hemonucleo;
+        p.innerHTML = "Nome: "+cursor.value.name.first+ " "+cursor.value.name.last+"<br> Tipo sanguíneo: "+cursor.value.tipo+"<br> Hemonúcleo: "+cursor.value.hemonucleo;
         var divres = document.getElementById("result");
         divres.appendChild(p);
         cursor.continue();
     }
 }
-
-
