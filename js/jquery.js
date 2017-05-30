@@ -12,4 +12,6 @@ function main(){
  $("#btnAnteriorOpcao").click(function() {
     window.location.href = 'hemonucleo.html';
  });
+
+ $('.cpf').mask('000.000.000-00', {reverse: true});
 }
