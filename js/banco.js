@@ -5,6 +5,13 @@ function inserirRegistro(){
     var hemonucleo = document.forms.form1.hemonucleo.value;
     var id = parseInt(document.forms.form1.id.value);
      inserir({"id":id,"name":{first:nome, "last":last},"tipo":tipo,"hemonucleo":hemonucleo})
+     
+    document.forms.form1.name.value="";
+    document.forms.form1.last.value="";
+    document.forms.form1.tipo.value="";
+    document.forms.form1.hemonucleo.value="";
+    document.forms.form1.id.value="";
+    
 }
 
 function inserir(obj){
@@ -32,6 +39,7 @@ function inserir(obj){
 
 function buscar(){
     getObjId(parseInt(document.forms.form2.id.value)); 
+    document.forms.form2.id.value="";
 }
 
 function getObjId(id){

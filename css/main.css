@@ -16,7 +16,7 @@ h1{
 }
 input{
 	margin: 5px;
-	text-align: center;
+	
 }
 #container{
     width: 80%;
@@ -94,9 +94,7 @@ footer{
 }
 
 
-.centro{
-    text-align:center;
-}
+
 
 #conteudo1, #conteudo2{
     
