@@ -15,7 +15,8 @@ h1{
     text-align: center;
 }
 input{
-	margin: 5px;	
+	margin: 5px;
+	text-align: center;
 }
 #container{
     width: 80%;
@@ -27,8 +28,18 @@ input{
     text-align: left;
     float: left;
     width: 40%;
-    margin-right: 10%;
+    margin-right: 5%;
     margin-top: 5%;
+
+}
+
+.escolha {
+    text-align: left;
+    float: left;
+    width: 45%;
+    margin-right: 5%;
+    margin-top: 5%;
+    
 }
 
 footer{
@@ -46,6 +57,7 @@ footer{
     padding: 12px;
     font-family: century gothic;
 }
+
 .botao{
 	color: #fff;
 	font-size: 30px; 
@@ -55,7 +67,6 @@ footer{
     margin: 15px;
     padding: 12px;
     font-family: century gothic;
-
 }
 
 .confirma{
