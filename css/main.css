@@ -56,6 +56,7 @@ footer{
     margin: 30px;
     padding: 12px;
     font-family: century gothic;
+    
 }
 
 .botao{
@@ -87,14 +88,16 @@ footer{
 }
 
 .texto{
-	text-align: justify;
+	text-align: left;
 	margin-left:15%;
 	margin-right:15%;
 	
 }
 
 
-
+a:link {
+   text-decoration: none; 
+}
 
 #conteudo1, #conteudo2{
     

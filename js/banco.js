@@ -40,6 +40,7 @@ function inserir(obj){
 function buscar(){
     getObjId(parseInt(document.forms.form2.id.value)); 
     document.forms.form2.id.value="";
+    
 }
 
 function getObjId(id){
